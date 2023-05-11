@@ -35,3 +35,14 @@ C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Micro
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\obj\Debug\net6.0\NLayer.Web.csproj.CopyComplete
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.Web\obj\Debug\net6.0\NLayer.Web.MvcApplicationPartsAssemblyInfo.cs

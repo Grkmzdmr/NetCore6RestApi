@@ -72,3 +72,6 @@ C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\Micro
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Gorkemozd\source\repos\NLayerUdemyApp\NLayer.API\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

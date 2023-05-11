@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NLayer.Core;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,13 @@ namespace NLayer.Repository
 {
     public class AppDbContext:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
-        {
 
+        protected readonly IConfiguration Configuration;
+
+      
+        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) :base(options)
+        {
+            Configuration = configuration;
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -23,11 +28,21 @@ namespace NLayer.Repository
         public DbSet<ProductFeature> ProductFeatures { get; set; }
 
 
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            // connect to mysql with connection string from app settings
+            var connectionString = Configuration.GetConnectionString("WebApiDatabase");
+            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             //Category class'ında primary key vermek istediğimiz yer için üstüne [Key] (İsmi Id'den farklıysa) yazabiliriz.
             //Ama kod temiz kalsın diye burada yapıyoruz.
+
+
+
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
