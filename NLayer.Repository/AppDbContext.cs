@@ -28,12 +28,7 @@ namespace NLayer.Repository
         public DbSet<ProductFeature> ProductFeatures { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            // connect to mysql with connection string from app settings
-            var connectionString = Configuration.GetConnectionString("WebApiDatabase");
-            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-        }
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -12,17 +12,18 @@ using NLayer.Repository;
 namespace NLayer.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230508131258_initial")]
-    partial class initial
+    [Migration("20230512073756_initialSQL")]
+    partial class initialSQL
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("NLayer.Core.Category", b =>
                 {
@@ -30,7 +31,7 @@ namespace NLayer.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -74,7 +75,7 @@ namespace NLayer.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -107,7 +108,7 @@ namespace NLayer.Repository.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3456),
+                            CreatedDate = new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(879),
                             Name = "Kalem 1",
                             Price = 100m,
                             Stock = 20
@@ -116,7 +117,7 @@ namespace NLayer.Repository.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3467),
+                            CreatedDate = new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(892),
                             Name = "Kitap 1",
                             Price = 600m,
                             Stock = 60
@@ -125,7 +126,7 @@ namespace NLayer.Repository.Migrations
                         {
                             Id = 3,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3468),
+                            CreatedDate = new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(892),
                             Name = "Kitap 2",
                             Price = 200m,
                             Stock = 40
@@ -138,7 +139,7 @@ namespace NLayer.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");

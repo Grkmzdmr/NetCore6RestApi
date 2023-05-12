@@ -3,10 +3,14 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace NLayer.Repository.Migrations
 {
-    public partial class initial : Migration
+    /// <inheritdoc />
+    public partial class initialSQL : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -73,42 +77,31 @@ namespace NLayer.Repository.Migrations
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedDate", "Name", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kalemler", null });
-
-            migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "CreatedDate", "Name", "UpdatedDate" },
-                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kitaplar", null });
-
-            migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "CreatedDate", "Name", "UpdatedDate" },
-                values: new object[] { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Defterler", null });
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kalemler", null },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kitaplar", null },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Defterler", null }
+                });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedDate", "Name", "Price", "Stock", "UpdatedDate" },
-                values: new object[] { 1, 1, new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3456), "Kalem 1", 100m, 20, null });
-
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedDate", "Name", "Price", "Stock", "UpdatedDate" },
-                values: new object[] { 2, 2, new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3467), "Kitap 1", 600m, 60, null });
-
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedDate", "Name", "Price", "Stock", "UpdatedDate" },
-                values: new object[] { 3, 2, new DateTime(2023, 5, 8, 16, 12, 58, 147, DateTimeKind.Local).AddTicks(3468), "Kitap 2", 200m, 40, null });
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(879), "Kalem 1", 100m, 20, null },
+                    { 2, 2, new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(892), "Kitap 1", 600m, 60, null },
+                    { 3, 2, new DateTime(2023, 5, 12, 10, 37, 56, 259, DateTimeKind.Local).AddTicks(892), "Kitap 2", 200m, 40, null }
+                });
 
             migrationBuilder.InsertData(
                 table: "ProductFeatures",
                 columns: new[] { "Id", "Color", "Height", "ProductId", "Width" },
-                values: new object[] { 1, "Kırmızı", 100, 1, 200 });
-
-            migrationBuilder.InsertData(
-                table: "ProductFeatures",
-                columns: new[] { "Id", "Color", "Height", "ProductId", "Width" },
-                values: new object[] { 2, "Mavi", 300, 2, 500 });
+                values: new object[,]
+                {
+                    { 1, "Kırmızı", 100, 1, 200 },
+                    { 2, "Mavi", 300, 2, 500 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductFeatures_ProductId",
@@ -122,6 +115,7 @@ namespace NLayer.Repository.Migrations
                 column: "CategoryId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

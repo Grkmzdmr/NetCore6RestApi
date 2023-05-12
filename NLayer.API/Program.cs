@@ -38,20 +38,24 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddDbContext<AppDbContext>(optionsAction =>
-{
-    optionsAction.UseMySql(builder.Configuration.GetConnectionString("supermarketDB"),
-        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
-});
+builder.Services.AddScoped<ICategoryRepository,CategoryRepository >();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
-//builder.Services.AddDbContext<AppDbContext>(x =>
+//builder.Services.AddDbContext<AppDbContext>(optionsAction =>
 //{
-//    x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"),option =>
-//    {
-//        option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
-//    });
+//    optionsAction.UseMySql(builder.Configuration.GetConnectionString("supermarketDB"),
+//        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
 //});
+
+
+builder.Services.AddDbContext<AppDbContext>(x =>
+{
+    x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"), option =>
+    {
+        option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
+    });
+});
 
 
 
